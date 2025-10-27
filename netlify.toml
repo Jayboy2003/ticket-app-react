@@ -1,24 +1,11 @@
 [build]
-  # Build command
-  command = "npm run build"
-  
-  # Output directory
+  command = "npm ci && npm run build"
   publish = "dist"
-
+  
 [build.environment]
-  # Node version (optional but recommended)
-  NODE_VERSION = "18"
+  NODE_VERSION = "18.17.0"
 
-# Redirect rules for React Router (VERY IMPORTANT!)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# Optional: Custom headers for security
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "no-referrer"
